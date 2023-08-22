@@ -54,3 +54,7 @@ C:\Users\Ygon1\OneDrive\Dev\Estudos\Back-end\C#\FilmesAPI\FilmesAPI\bin\Debug\ne
 C:\Users\Ygon1\OneDrive\Dev\Estudos\Back-end\C#\FilmesAPI\FilmesAPI\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Ygon1\OneDrive\Dev\Estudos\Back-end\C#\FilmesAPI\FilmesAPI\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Ygon1\OneDrive\Dev\Estudos\Back-end\C#\FilmesAPI\FilmesAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Ygon1\OneDrive\Dev\Estudos\Back-end\C#\FilmesAPI\FilmesAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Ygon1\OneDrive\Dev\Estudos\Back-end\C#\FilmesAPI\FilmesAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Ygon1\OneDrive\Dev\Estudos\Back-end\C#\FilmesAPI\FilmesAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Ygon1\OneDrive\Dev\Estudos\Back-end\C#\FilmesAPI\FilmesAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
