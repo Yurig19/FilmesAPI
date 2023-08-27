@@ -2,6 +2,6 @@
 
 public class CreateAddressDto
 {
-    public string Logradouro { get; set; }
-    public string Numero { get; set; }
+    public string PublicArea { get; set; }
+    public int Number { get; set; }
 }
