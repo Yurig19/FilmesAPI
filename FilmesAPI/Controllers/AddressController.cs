@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace FilmesAPI.Controllers;
 
 [ApiController]
-[Route("Controller")]
+[Route("[Controller]")]
 
 public class AddressController : ControllerBase
 {
