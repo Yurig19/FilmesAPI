@@ -2,6 +2,6 @@
 {
     public class CreateSessionDto
     {
-        public int Id { get; set; }
+        public int FilmId { get; set; }
     }
 }
