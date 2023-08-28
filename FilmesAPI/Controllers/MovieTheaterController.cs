@@ -71,7 +71,7 @@ public class MovieTheaterController : ControllerBase
         MovieTheater movieTheater = _context.MovieTheaters.FirstOrDefault(movieTheater => movieTheater.Id == id);
         if(movieTheater == null)
         {
-            return NoContent();
+            return NotFound();
         }
         _context.Remove(movieTheater);
         _context.SaveChanges();
