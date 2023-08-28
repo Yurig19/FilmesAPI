@@ -31,7 +31,9 @@ public class MovieTheaterController : ControllerBase
     [HttpGet]
     public  IEnumerable<ReadMovieTheaterDto> ReadMovieTheater()
     {
-        return _mapper.Map<List<ReadMovieTheaterDto>>(_context.MovieTheaters.ToList());
+        var listMovieTheaterData = _context.MovieTheaters.ToList();
+        var listMovieTheater = _mapper.Map<List<ReadMovieTheaterDto>>(_context.MovieTheaters.ToList());
+        return listMovieTheater;
     }
 
     [HttpGet("{Id}")]

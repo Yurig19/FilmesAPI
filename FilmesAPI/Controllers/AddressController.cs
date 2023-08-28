@@ -30,7 +30,7 @@ public class AddressController : ControllerBase
     }
 
 
-    [HttpGet]
+    [HttpGet]   
     public IEnumerable<ReadAddressDto> ReadAddress(int id)
     {
         return _mapper.Map<List<ReadAddressDto>>(_context.Addresses);
