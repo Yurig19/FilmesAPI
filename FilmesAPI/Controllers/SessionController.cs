@@ -25,7 +25,7 @@ namespace FilmesAPI.Controllers
             Session session = _mapper.Map<Session>(sessionDto);
             _context.Sessions.Add(session);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(ReadSessionId), new { Id = session.Id }, session);
+            return CreatedAtAction(nameof(ReadSessionId), new { filmId = session.FilmId, movieTheaterId = session.MovieTheaterId }, session);
         }
 
         [HttpGet]
@@ -34,10 +34,10 @@ namespace FilmesAPI.Controllers
             return _mapper.Map<List<ReadSessionDto>>(_context.Sessions.ToList());
         }
 
-        [HttpGet("{id}")]
-        public IActionResult ReadSessionId(int id)
+        [HttpGet("{filmId}, {movieTheaterId}")]
+        public IActionResult ReadSessionId(int filmId, int movieTheaterId)
         {
-            Session session = _context.Sessions.FirstOrDefault(session => session.Id == id);
+            Session session = _context.Sessions.FirstOrDefault(session => session.FilmId == filmId && session.MovieTheaterId == movieTheaterId);
             if (session != null)
             {
                 ReadSessionDto sessionDto = _mapper.Map<ReadSessionDto>(session);
