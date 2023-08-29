@@ -16,6 +16,7 @@ public class FilmContext : DbContext
         modelBuilder.Entity<Session>().HasKey(Session => new { Session.FilmId, Session.MovieTheaterId });
         modelBuilder.Entity<Session>().HasOne(session => session.MovieTheater).WithMany(movieTheater => movieTheater.Sessions).HasForeignKey(session => session.MovieTheaterId);
         modelBuilder.Entity<Session>().HasOne(session => session.Film).WithMany(film => film.Sessions).HasForeignKey(session => session.FilmId);
+        modelBuilder.Entity<Address>().HasOne(address => address.MovieTheater).WithOne(movieTheater => movieTheater.Address).OnDelete(DeleteBehavior.Restrict);
     }
 
     public DbSet<Film> Films { get; set; } 
