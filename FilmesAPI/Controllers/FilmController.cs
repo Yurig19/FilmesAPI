@@ -32,7 +32,7 @@ public class FilmController : ControllerBase
     [HttpGet]
     public IEnumerable<ReadFilmDto> ReadFilms([FromQuery] int skip = 0, [FromQuery] int take = 50)
     {
-        return _mapper.Map<List<ReadFilmDto>>(_context.Films.Skip(skip).Take(take));
+        return _mapper.Map<List<ReadFilmDto>>(_context.Films.Skip(skip).Take(take).ToList());
     }
 
     [HttpGet("{id}")]
