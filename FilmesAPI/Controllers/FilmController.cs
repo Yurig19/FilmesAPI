@@ -30,15 +30,20 @@ public class FilmController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<ReadFilmDto> ReadFilms([FromQuery] int skip = 0, [FromQuery] int take = 50)
+    public IEnumerable<ReadFilmDto> ReadFilms([FromQuery] int skip = 0, [FromQuery] int take = 50, [FromQuery] string? nameMovies = null)
     {
-        return _mapper.Map<List<ReadFilmDto>>(_context.Films.Skip(skip).Take(take).ToList());
+        if(nameMovies == null)
+        {
+            return _mapper.Map<List<ReadFilmDto>>(_context.Films.Skip(skip).Take(take).ToList());
+        }
+        return _mapper.Map<List<ReadFilmDto>>(_context.Films.Skip(skip).Take(take).Where(film => film.Sessions.Any(session => session.MovieTheater.Name == nameMovies)).ToList());
+
     }
 
     [HttpGet("{id}")]
     public IActionResult ReadFilmId(int id)
     {
-        var film = _context.Films.FirstOrDefault(film => film.Id == id);
+        var film = _context.Films.FirstOrDefault(film => film.Id == id);    
         if (film == null) return NotFound();
         var filmDto = _mapper.Map<ReadFilmDto>(film);
         return Ok(filmDto);
@@ -82,5 +87,4 @@ public class FilmController : ControllerBase
         _context.SaveChanges();
         return NoContent();
     }
-
 }
